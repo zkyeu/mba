@@ -240,6 +240,13 @@ var _default = { data: function data() {return { aid: null, articleData: null, c
 
     } },
 
+  onShareAppMessage: function onShareAppMessage() {
+    return {
+      title: this.articleData.title,
+      path: "/pages/article-detail/article-detail?id=" + this.aid
+      // imageUrl:this.data.info.img?this.data.info.img[0]:''
+    };
+  },
   mounted: function mounted() {
     // this.toLogin();
     this.fetchArticle();

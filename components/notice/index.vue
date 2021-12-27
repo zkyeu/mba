@@ -5,7 +5,7 @@
 			<span class="iconfont icon-arrowRight greey"></span>
 		</view>
 		<view class="list">
-			<text v-for="i in noticeData" class="list" @click="navigateTo(i.id)">• {{ i.title }}</text>
+			<text v-for="i in noticeData" class="line-list" @click="navigateTo(i.id)">• {{ i.title }}</text>
 		</view>
 	</view>
 </template>
@@ -78,9 +78,14 @@
 		display: flex;
 		flex-direction: column;
 		padding-top:5px;
-		.list {
+		.line-list {
 			text-indent: 1em;
 			font-size: 12px;
+			height: 20px;
+			line-height: 20px;
+			overflow: hidden;
+			white-space:nowrop;
+			text-overflow: ellipsis;
 		}
 	}
 }

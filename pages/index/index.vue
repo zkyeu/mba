@@ -2,19 +2,17 @@
 	<view class="content">
 		<notice></notice>
 		<navigate></navigate>
-		<!-- <articles></articles> -->
-<view>
-		
-		
-	</view>
 		<image class="logo" src="/static/imgs/logo.png"></image>
 		<view class="copy-right">
 			<text class="title">{{title}}</text>
 		</view>
+		 <!-- <Tabbar :current="0"></Tabbar> -->
 	</view>
 </template>
 
 <script>
+	import Config from '@/utils/config.js';
+	// import Tabbar from '@/components/tabBar/tabBar.vue'
 	import notice from '@/components/notice/index.vue';
 	import navigate from '@/components/navigate/navigate.vue';
 	import articles from '@/components/article/article.vue';
@@ -35,7 +33,21 @@
 		},
 		methods: {
 
-		}
+		},
+		onShareAppMessage: function () {
+			return {
+				title: 'MBA21081班',
+				path: 'pages/index/index',
+			}
+		},
+		mounted() {
+			
+		},
+		onShow() {
+		            // uni.hideTabBar({
+		            //     animation: false
+		            // })
+		        }
 	}
 </script>
 

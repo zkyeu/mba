@@ -48,9 +48,14 @@
   flex-direction: column;
   padding-top: 5px;
 }
-.notice .list .list.data-v-6752efd4 {
+.notice .list .line-list.data-v-6752efd4 {
   text-indent: 1em;
   font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrop;
+  text-overflow: ellipsis;
 }
 .arrowRight-o.data-v-6752efd4 {
   width: 1em;

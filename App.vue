@@ -8,7 +8,11 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
-		}
+		},
+		onShareAppMessage: function () {
+			console.log('1111')
+		    // return custom share data when user share.
+		  },
 	}
 </script>
 

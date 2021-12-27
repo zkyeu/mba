@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var notice = function notice() {__webpack_require__.e(/*! require.ensure | components/notice/index */ "components/notice/index").then((function () {return resolve(__webpack_require__(/*! @/components/notice/index.vue */ 186));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var navigate = function navigate() {__webpack_require__.e(/*! require.ensure | components/navigate/navigate */ "components/navigate/navigate").then((function () {return resolve(__webpack_require__(/*! @/components/navigate/navigate.vue */ 172));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var articles = function articles() {__webpack_require__.e(/*! require.ensure | components/article/article */ "components/article/article").then((function () {return resolve(__webpack_require__(/*! @/components/article/article.vue */ 177));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -172,21 +172,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-
-
-
-
-
-{
-  data: function data() {
-    return {
-      title: '2022©MBA21081班委宣' };
-
-  },
-  components: {
+var _config = _interopRequireDefault(__webpack_require__(/*! @/utils/config.js */ 211));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var notice = function notice() {__webpack_require__.e(/*! require.ensure | components/notice/index */ "components/notice/index").then((function () {return resolve(__webpack_require__(/*! @/components/notice/index.vue */ 186));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var navigate = function navigate() {__webpack_require__.e(/*! require.ensure | components/navigate/navigate */ "components/navigate/navigate").then((function () {return resolve(__webpack_require__(/*! @/components/navigate/navigate.vue */ 172));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var articles = function articles() {__webpack_require__.e(/*! require.ensure | components/article/article */ "components/article/article").then((function () {return resolve(__webpack_require__(/*! @/components/article/article.vue */ 177));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { data: function data() {return { title: '2022©MBA21081班委宣' };}, components: {
     notice: notice,
     navigate: navigate,
     articles: articles },
@@ -194,7 +192,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   onLoad: function onLoad() {
 
   },
-  methods: {} };exports.default = _default;
+  methods: {},
+
+
+  onShareAppMessage: function onShareAppMessage() {
+    return {
+      title: 'MBA21081班',
+      path: 'pages/index/index' };
+
+  },
+  mounted: function mounted() {
+
+  },
+  onShow: function onShow() {
+    // uni.hideTabBar({
+    //     animation: false
+    // })
+  } };exports.default = _default;
 
 /***/ }),
 /* 18 */

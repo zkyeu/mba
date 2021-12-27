@@ -1,35 +1,68 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-	
+	"pages": [
+		{
+			"path" : "pages/mine/mine",
+			"style" : {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+			}
+				
+		},
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "MBA21081班"
 			}
 		},
-	{
-	    "path" : "pages/article-detail/article-detail",
-	    "style" :                                                                                    
-	    {
-	        "navigationBarTitleText": "",
-	        "enablePullDownRefresh": false
-	    }
-	    
-	},
-	{
-	    "path" : "pages/login/login",
-	    "style" :                                                                                    
-	    {
-	        "navigationBarTitleText": "",
-	        "enablePullDownRefresh": false
-	    }
-	}
-	
-    ],
+		{
+			"path" : "pages/article-detail/article-detail",
+			"style" :                                                                                    
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+				
+		},
+		{
+			"path" : "pages/login/login",
+			"style" :                                                                                    
+			{
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+			}
+		}
+		
+  ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "MBA21081班",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#2483ff",
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/imgs/home.png",
+				"selectedIconPath": "static/imgs/home-cur.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/imgs/add.png",
+				"selectedIconPath": "static/imgs/add-cur.png",
+				"text": "发布"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/imgs/my.png",
+				"selectedIconPath": "static/imgs/my-cur.png",
+				"text": "我"
+			}
+		]
 	}
 }

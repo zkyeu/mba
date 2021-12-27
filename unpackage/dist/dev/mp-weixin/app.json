@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/index/index",
     "pages/article-detail/article-detail",
     "pages/login/login"
@@ -11,10 +12,35 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#2483ff",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/imgs/home.png",
+        "selectedIconPath": "static/imgs/home-cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/imgs/add.png",
+        "selectedIconPath": "static/imgs/add-cur.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/imgs/my.png",
+        "selectedIconPath": "static/imgs/my-cur.png",
+        "text": "我"
+      }
+    ]
+  },
   "permission": {},
   "uniStatistics": {
     "enable": false
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

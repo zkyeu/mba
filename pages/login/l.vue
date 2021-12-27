@@ -54,43 +54,7 @@
 			};
 		},
 		methods: {
-			// 获取当前页面信息
-			fetchPageInfo() {
-				// 获取头像，名字，标签，文章发布时间，文章信息，位置，评论，点赞
-			},
-				
-			// 获取文章内容信息
-			fetchArticle () {
-				uni.request({
-				    url: 'https://www.sotm.cn/apiv1/get/articlelist', //仅为示例，并非真实接口地址。
-				    data: {
-							id: 1
-				    },
-						method: 'POST',
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (res) => {
-				        console.log(res.data);
-								this.typeData = res.data;
-				        
-				    }
-				});
-			},
-			
-			// 按钮点击交互
-			hanleBtn (v) {
-				console.log(v);
-				switch (v){
-					case 'comment':
-					
-					break;
-					case 'like':
-					
-					break;
-					default:
-				}
-			},
+
 			toLogin(fn){
 				let self = this;
 				uni.login({

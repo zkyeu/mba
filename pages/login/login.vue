@@ -1,27 +1,34 @@
 <template>
-    <view>
-        <!-- 如果用手机号登录，获取手机号码相关信息 -->
-        <button type="primary" open-type="getPhoneNumber" lang="zh_CN" @getphonenumber="getPhoneNumber">手机号一键登录</button>
-        <!-- 如果用微信登录，获取微信相关用户信息 -->
-        <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">获取用户信息</button>
-				<view class="">
-					{{userInfo}}
-					{{phone}}
-				</view>
-    </view>
+	<view>
+		<view class="bg">
+		  <image src="/static/imgs/logo.png" mode="aspectFill"></image>
+		  <view>MBA21081班</view>
+		  <text>登录班级，享专属校友信息</text>
+		</view>
+		
+		<view class="btnbg" v-if="phone">
+			<button type="primary" open-type="getPhoneNumber" lang="zh_CN" @getphonenumber="getPhoneNumber">手机号一键登录</button>
+		</view>
+		
+		<view class="btnbg" v-else>
+			 <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">点击登录</button>
+		</view>
+	</view>
 </template>
 
 <script>
-    export default {
+	import Config from '@/utils/config.js';
+	export default {
         data() {
             return {
 							userInfo: {},
-							phone: {}
+							phone: ''
 						}
         },
         onLoad() {
             // 执行查看授权选项
             this.getSettingMes();
+						console.log(Config)
         },
         methods: {
             // 查看已授权选项
@@ -56,44 +63,60 @@
             },
             // 手动授权方法
             onGotUserInfo(e) {
-                // 获取用户信息
-                uni.getUserInfo({
-                    // 获取信息成功
-                    success(res) {
-                        console.log(res);
-                        // 成功后进行登录,获取code
-                        uni.login({
-                          success (res) {
-                             console.log(res);
-                            // if (res.code) {
-                            //   //发起网络请求
-                            //   uni.request({
-                            //     // 请求路径
-                            //     url: 'https://test.com/onLogin',
-                            //     // 请求参数code
-                            //     data: {
-                            //       code: res.code
-                            //     },
-                            //     method: 'GET',
-                            //     success(res){
-                            //         // 请求成功后获取openid和session_key
-                            //         console.log(res)
-                            //     }
-                            //   })
-                            // } else {
-                            //   console.log('登录失败！' + res.errMsg)
-                            // }
-                          }
-                        })
-                    },
-                    fail() {
-                        console.log("获取用户信息失败");
-                    }
-                })
+              let self = this;
+							uni.login({
+								provider: 'weixin',
+								success: function (loginRes) {
+									self.code = loginRes.code;
+									uni.request({
+											url: 'https://api.weixin.qq.com/sns/jscode2session',  
+											method:'GET',  
+											data: {  
+													appid: Config.appid,        //你的小程序的APPID  
+													secret: Config.secret,       //你的小程序的secret,  
+													js_code: loginRes.code              //wx.login 登录成功后的code  
+											},  
+											success: (cts) => {
+												console.log(cts.data)
+													// 换取成功后 暂存这些数据 留作后续操作  
+													// this.openid=cts.data.openid     //openid 用户唯一标识  
+													// this.session_key=cts.data.session_key     //session_key  会话密钥  
+											},
+											fail: () => {
+												console.log('fail')
+											}
+									}); 
+
+									console.log('-->', loginRes);
+						
+									// self.loginEvent(loginRes.code, fn); //用code去创建用户信息，或者查询用户的基本信息
+									uni.getUserInfo({
+											provider: 'weixin',
+											success: function (infoRes) {
+												self.userInfo = infoRes.userInfo;
+												console.log('用户昵称为：' + infoRes.userInfo.nickName);
+												// console.log('wx.getUserProfile', wx.canIUse('getUserProfile'));
+											},
+											fail: function () {
+													console.log('3333333333');
+											},
+											complete: function () {
+													console.log('44444444444444');
+											}
+									});
+									
+									wx.getUserProfile({
+										desc: '用于完善用户资料',
+										lang: 'zh_CN',
+										success: (res) => {
+											console.log('getUserProfile',res);
+										}
+									});
+								}
+						  });
             },
             // 手机登录时获取手机号码相关信息的函数
             getPhoneNumber(e) {
-                console.log(e);
 								this.phone = JSON.stringify(e);
             }
         }
@@ -101,5 +124,45 @@
 </script>
 
 <style lang="scss">
-
+.bg {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+	image{
+		width: 200rpx;
+		height: 200rpx;
+		/* border-radius: 50%; */
+	}
+	view {
+		font-size: 36rpx;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		color: #004097;
+		margin-top: 30rpx;
+		margin-bottom: 30rpx;
+	}
+	text {
+		font-size: 24rpx;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+		color: #999999;
+	}
+	.btn{
+	  width: 610rpx !important;
+		height: 100rpx !important;
+		border-radius: 50rpx !important;
+		background: #004097;
+		box-shadow: 0px 4px 6px 0px rgba(53, 68, 184, 0.4);
+		border-radius: 10rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #FFFFFF;
+		font-size: 32rpx;
+		font-family: Microsoft YaHei;
+		font-weight: 400;
+	}
+}
 </style>
