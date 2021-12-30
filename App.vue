@@ -1,5 +1,10 @@
 <script>
 	export default {
+		globalData: {  
+			text: '345678',
+			code: '',
+			openid: ''
+		}, 
 		onLaunch: function() {
 			console.log('App Launch')
 		},
