@@ -13,9 +13,9 @@
 				</block>
 			</scroll-view>
 		</view>
-		<view class="122">
-			<!-- {{JSON.stringify(typeData)}} -->
-		</view>
+	<!-- 	<view class="122">
+			{{JSON.stringify(typeData)}} 
+		</view> -->
 		<!-- 内容区 -->
 		<view class="content" v-for="i in typeData.data" @click="navigateTo(i.id)">
 			<view class="article-person">
@@ -35,13 +35,12 @@
 			</view>
 			
 			<view class="article-title">{{i.title}}</view>
-			<view class="article-text" v-html="i.body"></view>
 			<view class="img-list">
 					<!-- <image src="../../static/imgs/logo.png" v-for="i in 6"></image> -->
 			</view>
 			<view class="props">
 				<span><i class="iconfont icon-position-o" v-if="i.address">{{i.address}}</i></span>
-				<span><i class="iconfont icon-pinglun-tongyong" v-if="i.comment">{{i.comment}}</i></span>
+				<span><i class="iconfont icon-pinglun-tongyong" >{{i.comment}}</i></span>
 				<span><i class="iconfont icon-praise-o" v-if="i.like">{{i.like}}</i></span>
 			</view>
 		</view>
@@ -134,10 +133,9 @@
 				uni.navigateTo({
 				    url: `/pages/article-detail/article-detail?id=${id}`
 				});
-			}
-			
-		},
+			},
 
+		},
 		created() {
 			this.fetchList();
 		}
@@ -145,7 +143,7 @@
 	
 </script>
  
-<style lang="scss">
+<style lang="scss" scoped>
 	.horizonal-tab .active{
 		color: red;
 	}
@@ -224,10 +222,9 @@
 		margin-bottom: 6px;
 	}
 	
-	.article-text{
+	.article-content{
 		font-size: 13px;
 		color: #333;
-		// line-height: 12px;
 	}
 	
 	.img-list {

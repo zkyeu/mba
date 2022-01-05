@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/article/article":1,"components/navigate/navigate":1,"components/notice/index":1};
+/******/ 		var cssChunks = {"components/article/article":1,"components/navigate/navigate":1,"components/notice/index":1,"components/comment/comment":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/article/article":"components/article/article","components/navigate/navigate":"components/navigate/navigate","components/notice/index":"components/notice/index"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/article/article":"components/article/article","components/navigate/navigate":"components/navigate/navigate","components/notice/index":"components/notice/index","components/comment/comment":"components/comment/comment"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

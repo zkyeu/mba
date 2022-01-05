@@ -24,20 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.content {
+.content.data-v-5ac5ffc6 {
   background-color: #fff;
   border-radius: 6px;
   padding: 10px;
 }
-.article-person {
+.article-person.data-v-5ac5ffc6 {
   display: flex;
   justify-content: space-between;
 }
-.article-person .person {
+.article-person .person.data-v-5ac5ffc6 {
   display: flex;
   margin-bottom: 10px;
 }
-.article-person .person image {
+.article-person .person image.data-v-5ac5ffc6 {
   margin-right: 8px;
   border-radius: 20px;
   overflow: hidden;
@@ -45,15 +45,15 @@
   width: 34px;
   height: 34px;
 }
-.article-person .person .name-block {
+.article-person .person .name-block.data-v-5ac5ffc6 {
   display: flex;
   flex-direction: column;
 }
-.article-person .person .name-block .name {
+.article-person .person .name-block .name.data-v-5ac5ffc6 {
   display: flex;
   font-size: 13px;
 }
-.article-person .person .name-block .name .tags {
+.article-person .person .name-block .name .tags.data-v-5ac5ffc6 {
   background-color: #333;
   color: #fff;
   border-radius: 6px;
@@ -63,22 +63,28 @@
   margin-left: 8px;
   font-size: 10px;
 }
-.article-person .person .name-block .date {
+.article-person .person .name-block .date.data-v-5ac5ffc6 {
   font-size: 12px;
   color: #aaa;
 }
-.article-person .type {
+.article-person .type.data-v-5ac5ffc6 {
   display: none;
 }
-.article-title {
+.article-title.data-v-5ac5ffc6 {
   font-size: 14px;
   margin-bottom: 6px;
 }
-.article-text {
+.data-v-5ac5ffc6 .article-content {
   font-size: 13px;
   color: #333;
 }
-.img-list {
+.data-v-5ac5ffc6 .article-content ._img {
+  max-width: 100%;
+}
+.data-v-5ac5ffc6 .article-content image {
+  width: 100px;
+}
+.img-list.data-v-5ac5ffc6 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,21 +92,21 @@
   align-items: flex-start;
   margin-top: 16px;
 }
-.img-list image {
+.img-list image.data-v-5ac5ffc6 {
   width: 25vw;
   height: 80px;
 }
-.props {
+.props.data-v-5ac5ffc6 {
   display: flex;
   padding-top: 16px;
   justify-content: space-between;
   color: #777;
 }
-.props ._span {
+.props ._span.data-v-5ac5ffc6 {
   display: flex;
   align-items: center;
 }
-.props .iconfont {
+.props .iconfont.data-v-5ac5ffc6 {
   font-size: 12px;
 }
 

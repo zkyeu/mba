@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/index/index",
+    "pages/mine/mine",
     "pages/article-detail/article-detail",
     "pages/login/login"
   ],
@@ -42,5 +42,6 @@
   "uniStatistics": {
     "enable": false
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

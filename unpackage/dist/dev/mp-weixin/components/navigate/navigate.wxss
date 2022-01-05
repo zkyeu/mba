@@ -54,44 +54,44 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.horizonal-tab .active {
+.horizonal-tab .active.data-v-fe1a6db8 {
   color: red;
 }
-.scroll-tab {
+.scroll-tab.data-v-fe1a6db8 {
   white-space: nowrap;
   /* 必要，导航栏才能横向*/
   border-bottom: 1rpx solid #eee;
   text-align: center;
 }
-.scroll-tab-item {
+.scroll-tab-item.data-v-fe1a6db8 {
   display: inline-block;
   /* 必要，导航栏才能横向*/
   margin: 20rpx 30rpx 0 30rpx;
 }
-.active .scroll-tab-line {
+.active .scroll-tab-line.data-v-fe1a6db8 {
   border-bottom: 5rpx solid red;
   border-top: 5rpx solid red;
   border-radius: 20rpx;
   /* width: 70rpx; */
 }
-.article {
+.article.data-v-fe1a6db8 {
   margin-top: 16px;
 }
-.article .content {
+.article .content.data-v-fe1a6db8 {
   margin: 10px 0;
   background-color: #fff;
   border-radius: 6px;
   padding: 10px;
 }
-.article .article-person {
+.article .article-person.data-v-fe1a6db8 {
   display: flex;
   justify-content: space-between;
 }
-.article .article-person .person {
+.article .article-person .person.data-v-fe1a6db8 {
   display: flex;
   margin-bottom: 10px;
 }
-.article .article-person .person image {
+.article .article-person .person image.data-v-fe1a6db8 {
   margin-right: 8px;
   border-radius: 20px;
   overflow: hidden;
@@ -99,15 +99,15 @@
   width: 34px;
   height: 34px;
 }
-.article .article-person .person .name-block {
+.article .article-person .person .name-block.data-v-fe1a6db8 {
   display: flex;
   flex-direction: column;
 }
-.article .article-person .person .name-block .name {
+.article .article-person .person .name-block .name.data-v-fe1a6db8 {
   display: flex;
   font-size: 13px;
 }
-.article .article-person .person .name-block .name .tags {
+.article .article-person .person .name-block .name .tags.data-v-fe1a6db8 {
   background-color: #333;
   color: #fff;
   border-radius: 6px;
@@ -117,22 +117,22 @@
   margin-left: 8px;
   font-size: 10px;
 }
-.article .article-person .person .name-block .date {
+.article .article-person .person .name-block .date.data-v-fe1a6db8 {
   font-size: 12px;
   color: #aaa;
 }
-.article .article-person .type {
+.article .article-person .type.data-v-fe1a6db8 {
   display: none;
 }
-.article .article-title {
+.article .article-title.data-v-fe1a6db8 {
   font-size: 14px;
   margin-bottom: 6px;
 }
-.article .article-text {
+.article .article-content.data-v-fe1a6db8 {
   font-size: 13px;
   color: #333;
 }
-.article .img-list {
+.article .img-list.data-v-fe1a6db8 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -140,21 +140,21 @@
   align-items: flex-start;
   margin-top: 16px;
 }
-.article .img-list image {
+.article .img-list image.data-v-fe1a6db8 {
   width: 25vw;
   height: 80px;
 }
-.article .props {
+.article .props.data-v-fe1a6db8 {
   display: flex;
   padding-top: 16px;
   justify-content: space-between;
   color: #777;
 }
-.article .props ._span {
+.article .props ._span.data-v-fe1a6db8 {
   display: flex;
   align-items: center;
 }
-.article .props .iconfont {
+.article .props .iconfont.data-v-fe1a6db8 {
   font-size: 12px;
 }
 

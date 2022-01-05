@@ -17,20 +17,23 @@
 			<!-- <view class="type">预留</view> -->
 		</view>
 		<view class="article-title">{{articleData.title}}</view>
-		<view class="article-text" v-html="articleData.body"></view>
+		<!-- <view class="article-text" v-html="articleData.body"></view> -->
+		<rich-text class="article-content" :nodes="handleContent(articleData.body)"></rich-text> 
 <!-- 		<view class="img-list">
 				<image :src="i" v-for="i in articleInfo.imgs"></image>
 		</view> -->
 		<view class="props">
 			<span><i class="iconfont icon-position-o" v-if="articleData.address">{{articleData.address}}</i></span>
-			<span @click="hanleBtn('comment')"><i class="iconfont icon-pinglun-tongyong" v-if="articleData.comment">{{articleData.comment}}</i></span>
+			<span @click="hanleBtn('comment')"><i class="iconfont icon-pinglun-tongyong">{{articleData.comment}}</i></span>
 			<span @click="hanleBtn('like')"><i class="iconfont icon-praise-o" v-if="articleData.like">{{articleData.like}}</i></span>
 		</view>
+		<Comment />
 	</view>
 </template>
 
 <script>
 	import Moment from 'moment';
+	import Comment from '../../components/comment/comment.vue';
 	export default {
 		data() {
 			return {
@@ -40,6 +43,9 @@
 				userInfo: {},
 				nickName: ''
 			};
+		},
+		components:{
+			Comment
 		},
 		methods: {
 			// 获取当前页面信息
@@ -60,6 +66,10 @@
 					break;
 					default:
 				}
+			},
+			handleContent (v) {
+				const regex = new RegExp('<img', 'gi');
+				return v.replace(regex,'<img style="max-width: 100%;"');
 			},
 
 			fetchArticle(){
@@ -86,6 +96,7 @@
 				// imageUrl:this.data.info.img?this.data.info.img[0]:''
 			}
 		},
+		
 		mounted() {
 			// this.toLogin();
 			this.fetchArticle();
@@ -96,7 +107,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.content {
 		// margin: 10px 0;
 		background-color: #fff;
@@ -153,10 +164,15 @@
 		margin-bottom: 6px;
 	}
 	
-	.article-text{
+	/deep/ .article-content{
 		font-size: 13px;
 		color: #333;
-		// line-height: 12px;
+		img {
+			max-width: 100%;
+		}
+		image {
+			width: 100px;
+		}
 	}
 	
 	.img-list {
