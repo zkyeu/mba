@@ -24,4 +24,183 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.release {
+  padding: 20rpx 32rpx;
+}
+.release .inputs .title, .release .inputs .content {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #333;
+  width: calc(100vw - 84rpx);
+  background-color: #f1f1f1;
+  border-radius: 10rpx;
+  padding: 10rpx 10rpx;
+}
+.release .inputs .title {
+  height: 40rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 10rpx;
+}
+.release .inputs .content {
+  margin-top: 20rpx;
+}
+.release .inputs .limit-text {
+  text-align: right;
+  color: #999;
+  font-size: 20rpx;
+}
+.release .upload {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.release .upload .add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx dashed #ccc;
+  box-sizing: border-box;
+}
+.release .upload .add image {
+  width: 60rpx !important;
+  height: 53rpx !important;
+  margin-bottom: 10rpx;
+}
+.release .upload > view {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 28rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #999;
+}
+.release .upload > view:nth-child(3n) {
+  margin-right: 0;
+}
+.release .upload .imgs image {
+  border: solid 1px #ddd;
+  width: 208rpx;
+  height: 208rpx;
+  border-radius: 10rpx;
+}
+.release .upload .imgs .del {
+  position: absolute;
+  right: 2rpx;
+  top: 1rpx;
+  width: 28rpx;
+  height: 28rpx;
+  border: none;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8rpx;
+  border-radius: 20rpx;
+}
+.release .tag-box {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 26rpx;
+}
+.release .tag-box > view {
+  display: flex;
+}
+.release .tag-box > view > view {
+  display: flex;
+  align-items: center;
+  color: #666;
+  background-color: #ddd;
+  border-radius: 20rpx;
+  padding: 0 10rpx;
+}
+.release .tag-box > view > view.address {
+  margin-right: 40rpx;
+  width: 160rpx;
+  height: 36rpx;
+}
+.release .tag-box > view > view.address text {
+  display: block;
+  width: 140rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.release .tag-box > view > view.address image {
+  width: 28rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.release .tag-box > view > view.address.tag {
+  position: relative;
+  display: flex;
+}
+.release .tag-box > view > view.address.tag text {
+  max-width: 140rpx;
+}
+.release .tag-box > view > view.address.tag image {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.release .tag-box > view > view.address.tag image:nth-child(2) {
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  padding: 10rpx;
+}
+.release .bqbox {
+  width: 670rpx;
+  margin-left: 40rpx;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.release .bqbox > view {
+  width: 150rpx;
+  height: 40rpx;
+  background: #F8F8F8;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  display: flex;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 30rpx;
+}
+.release .bqbox > view image {
+  width: 24rpx;
+  height: 24rpx;
+}
+.release .release-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 120rpx;
+  line-height: 100rpx;
+  font-weight: 700;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #2483ff;
+}
+.release .release-info.disable {
+  background-color: #ddd;
+}
 

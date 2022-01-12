@@ -33,7 +33,7 @@
 				</view>
 			</view>
 			
-			 <view class="del" bindtap="back">
+			 <view class="del" @click="handleClick('index')">
 			   <image src="/static/imgs/shanchu@2x.png"></image>
 			 </view>
 		</view>
@@ -49,10 +49,16 @@
 		},
 		methods:{
 			handleClick (v) {
-				console.log(v)
-				uni.navigateTo({
-				    url: `/pages/release/release?type=${v}`
-				});
+				if (v === 'index') {
+					uni.switchTab({
+					    url: '/pages/index/index'
+					});
+				} else {
+					uni.navigateTo({
+					    url: `/pages/release/release?type=${v}`
+					});
+				}
+				
 			}
 		}
 	}

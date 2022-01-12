@@ -1,6 +1,12 @@
 {
 	"pages": [
 		{
+			"path": "pages/release/release",
+			"style": {
+				"navigationBarTitleText": "信息发布"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "MBA21081班"
@@ -12,13 +18,6 @@
 				"navigationBarTitleText": "选择类型"
 			}
 		},
-		{
-			"path": "pages/release/release",
-			"style": {
-				"navigationBarTitleText": "信息发布"
-			}
-		},
-		
 		{
 			"path" : "pages/mine/mine",
 			"style" : {
