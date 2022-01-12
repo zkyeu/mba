@@ -33,6 +33,7 @@
 		onLoad() {
 				this.pname = Config.name;
 				this.checkUser();
+				// this.onGotUserInfo();
 		},
 		methods: {
 				// 查看已授权选项
@@ -65,11 +66,13 @@
 				
 				// 获取用户部分信息存储
 				onGotUserInfo() {
+					console.log('1');
 					let self = this;
 					// 获取code
 					uni.login({
-						provider: 'weixin',
+						providr: 'weixin',
 						success: function (loginRes) {
+							console.log('2');
 							self.code = loginRes.code;
 							// 通过code获取openid
 							uni.request({
@@ -81,11 +84,37 @@
 										js_code: loginRes.code      // wx.login 登录成功后的code  
 									},  
 									success: (cts) => {
+										console.log('openid',cts.data.openid)
+										console.log('session_key',cts.data.session_key)
+										// uni.getUserInfo({
+										// 		withCredentials: false,
+										// 		success(res) {
+										// 				console.log(res);
+										// 				uni.request({
+										// 						url: 'https://api.weixin.qq.com/cgi-bin/user/info',
+										// 						data: {
+										// 								code: loginRes.code,
+										// 								encryptedData : res.encryptedData,
+										// 								iv : res.iv,
+										// 						},
+										// 						success: function(ress) {
+										// 								console.log(ress)
+										// 						},
+										// 						fail: function(res) {
+										// 								console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+										// 						}
+										// 				})
+										// 		},
+										// 		fail() {
+										// 				console.log("获取用户信息失败")
+										// 		}
+										// });
 										self.openid = cts.data.openid;     //openid 用户唯一标识
 										self.session_key = cts.data.session_key;     //session_key  会话密钥
+										if (uni.getStorageSync('openid') === cts.data.openid) return;
 										uni.setStorageSync('openid',cts.data.openid);
 										uni.setStorageSync('session_key',cts.data.session_key);
-										if (uni.getStorageSync('openid') == cts.data.openid) return;
+										
 										self.saveNewUser({
 											openid: cts.data.openid,
 											...self.userInfo
@@ -175,13 +204,14 @@
 				// 查询用户openid，如果存在拉取存储信息，否则保存
 				checkUser() {
 					let openid = uni.getStorageSync('openid');
+					console.log(openid);
 					if (!openid) {
 						// 获取用户openid
 						console.log('获取用户openid');
 						this.onGotUserInfo();
 					} else {
 						// 拿着openid去数据库查询用户信息
-						// console.log('拿着openid去数据库查询用户信息');
+						console.log('拿着openid去数据库查询用户信息');
 						// console.log(openid);
 						// 查询到 返回对应数据
 						uni.request({

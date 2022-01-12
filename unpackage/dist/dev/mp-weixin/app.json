@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/release/type",
+    "pages/release/release",
     "pages/index/index",
     "pages/mine/mine",
     "pages/article-detail/article-detail",
@@ -25,7 +27,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/release/release",
         "iconPath": "static/imgs/add.png",
         "selectedIconPath": "static/imgs/add-cur.png",
         "text": "发布"
@@ -42,6 +44,5 @@
   "uniStatistics": {
     "enable": false
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
