@@ -1,47 +1,42 @@
 <template>
 	<view class="release">
-		<view class="glass">
-		<!-- 			<image src="/static/imgs/1@2x.png"></image> -->
-		</view>
-		
+		<view class="filter-bg"></view>
+			
 		<view class="content">
 			<view class="fonts">
 				<text>每日最多</text>
-				<text>发布3条消息</text>
+				<text>发布5条消息</text>
 			</view>
 			<view class="line"></view>
+			
+			<view class="type">
+				<view @click="handleClick('news')">
+					<image src="/static/imgs/1@2x.png"></image>
+					<text>最新班讯</text>
+				</view>
+				<view @click="handleClick('notice')">
+					<image src="/static/imgs/2@2x.png"></image>
+					<text>资源</text>
+				</view>
+<!-- 				
+				<view bindtap="fb" data-type="4">
+					<image src="/static/imgs/3@2x.png"></image>
+					<text>活动</text>
+				</view>
+				<view bindtap="fb" data-type="5">
+					<image src="/static/imgs/4@2x.png"></image>
+					<text>内推</text>
+				</view> -->
+				<view @click="handleClick('other')">
+					<image src="/static/imgs/5@2x.png"></image>
+					<text>其他</text>
+				</view>
+			</view>
+			
+			 <view class="del" bindtap="back">
+			   <image src="/static/imgs/shanchu@2x.png"></image>
+			 </view>
 		</view>
-		
-		<view class="box">
-		   <view bindtap="fb" data-type="3">
-		     <image src="/static/imgs/1@2x.png"></image>
-		     <text>需求</text>
-		   </view>
-		   <view bindtap="fb" data-type="2">
-		    <image src="/static/imgs/2@2x.png"></image>
-		     <text>资源</text>
-		   </view>
-		   <view bindtap="fb" data-type="4">
-		    <image src="/static/imgs/3@2x.png"></image>
-		     <text>活动</text>
-		   </view>
-		   <view style="margin-top:40rpx" bindtap="fb" data-type="5">
-		    <image src="/static/imgs/4@2x.png"></image>
-		     <text>内推</text>
-		   </view>
-		   <view style="margin-top:40rpx" bindtap="fb" data-type="6">
-		    <image src="/static/imgs/5@2x.png"></image>
-		     <text>其他</text>
-		   </view>
-		  </view>
-		
-<!-- 		 <view class="del" bindtap="back">
-		   <image src="/static/imgs/shanchu@2x.png"></image>
-		 </view> -->
-		
-		</view>
-		
-		
 	</view>
 </template>
 
@@ -51,48 +46,56 @@
 			return {
 				
 			};
+		},
+		methods:{
+			handleClick (v) {
+				console.log(v)
+				uni.navigateTo({
+				    url: `/pages/release/release?type=${v}`
+				});
+			}
 		}
 	}
 </script>
 
 <style lang="scss">
 .release {
-	 width: 100vw;   
-	 height: 100vh;   
-	 // background: url(../../static/imgs/beijin@2x.png);   
-	 background-repeat: no-repeat;   
-	 background-attachment: fixed;   
-	 overflow: hidden;
-	 
-	 .glass {
+	 .filter-bg {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;   
+		background-image: url(../../static/imgs/filterbg.jpg);
+		background-size:100% 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		overflow: hidden;
+		filter: blur(80rpx);
+		opacity: 0.4;
+	 }
+	 .content {
 		 position: absolute;
 		 left: 0;
 		 top: 0;
 		 width: 100vw;
-		 height: 100vh;
-		 background: inherit;  
-		 filter: blur(5px);
-		 z-index: 1;
-	 }
-	 
-	 .content {
-		 z-index: 999;
-		 padding: 20px;
-		 .fonts {
-			 margin-top:20px;
-			 text {
-				 display: block;
-				 font-size: 30px;
-				 padding: 5px;
-			 }
-		 }
-		 .line {
-			 width: 50px;
-			 border-top: 3px solid #ddd;
-			 margin-left: 10px;
-		 }
-		 .box{
-			 width: 574rpx;
+		 height: 90vh;
+		.fonts {
+			padding: 0 110rpx;
+			margin-top: 50rpx;
+			text {
+				display: block;
+				font-size: 50rpx;
+				padding: 5rpx;
+			}
+		}
+		.line {
+			width: 100rpx;
+			border-top: 3rpx solid #555;
+			margin-left: 110rpx;
+		}
+		.type{
+			 width: 700rpx;
 			 position: absolute;
 			 height: 380rpx;
 			 bottom: 200rpx;
@@ -102,7 +105,7 @@
 			 & > view {
 			 	height: 180rpx;
 			 	width: 110rpx;
-			 	margin-left: 120rpx;
+			 	margin-left: 108rpx;
 			 	font-size: 26rpx;
 			 	font-family: Microsoft YaHei;
 			 	font-weight: 400;
@@ -117,8 +120,23 @@
 			 	& > text{
 			 	  margin-top: 10rpx;
 			 	}
+
 			 }
 		}
-	}
+		.del{
+		  width: 100vw;
+		  height: 100rpx;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  position: fixed;
+		  bottom: 30rpx;
+		  z-index: 2;
+		  image{
+		    width: 28rpx;
+		    height: 28rpx;
+		  }
+		}
+	 }
 }
 </style>

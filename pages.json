@@ -1,9 +1,15 @@
 {
 	"pages": [
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "MBA21081班"
+			}
+		},
+		{
 			"path": "pages/release/type",
 			"style": {
-				"navigationBarTitleText": "信息发布"
+				"navigationBarTitleText": "选择类型"
 			}
 		},
 		{
@@ -12,12 +18,7 @@
 				"navigationBarTitleText": "信息发布"
 			}
 		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "MBA21081班"
-			}
-		},
+		
 		{
 			"path" : "pages/mine/mine",
 			"style" : {
@@ -61,7 +62,7 @@
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/release/release",
+				"pagePath": "pages/release/type",
 				"iconPath": "static/imgs/add.png",
 				"selectedIconPath": "static/imgs/add-cur.png",
 				"text": "发布"
