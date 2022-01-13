@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "MBA21081班",
-  "usingComponents": {
-    "navigate": "/components/navigate/navigate",
-    "notice": "/components/notice/index",
-    "articles": "/components/article/article"
-  }
-}

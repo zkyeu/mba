@@ -1,1 +1,0 @@
-<view class="content data-v-57280228"><notice vue-id="8dd740cc-1" class="data-v-57280228" bind:__l="__l"></notice><navigate vue-id="8dd740cc-2" class="data-v-57280228" bind:__l="__l"></navigate><image class="logo data-v-57280228" src="/static/imgs/logo.png"></image><view class="copy-right data-v-57280228"><text class="title data-v-57280228">{{title}}</text></view></view>
