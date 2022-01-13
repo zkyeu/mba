@@ -96,7 +96,7 @@
 			},
 			fetchList() {
 				uni.request({
-				    url: 'https://www.sotm.cn/apiv1/get/articlelist', //仅为示例，并非真实接口地址。
+				    url: 'https://www.sotm.cn/apiv1/get/articlelist',
 				    data: {
 							pn: 1,
 							rn: 100
@@ -109,6 +109,7 @@
 								this.typeData = res.data;
 				    }
 				});
+				
 				uni.request({
 				    url: 'https://www.sotm.cn/apiv1/get/getdiytypes', //仅为示例，并非真实接口地址。
 						method: 'GET',

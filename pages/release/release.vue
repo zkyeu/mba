@@ -13,7 +13,7 @@
 				<image :src="m"></image>
 				<image src="/static/imgs/del@2x.png" class="del" @click="handleClick('delimg', n)"></image>
 			</view>
-			<view class="add" v-if="imgs.length < 9"> 
+			<view class="add" v-if="imgs.length < 9" @click="handleClick('upload')"> 
 				<image src="/static/imgs/xiangji.png"></image>
 				<text>添加照片(9张以内)</text>
 			</view>
@@ -43,7 +43,7 @@
 				</view>
 			</view>
 			
-			<view class="release-info" disable @click="handleClick('submit')">发布信息</view>
+			<view class="release-info" :class="{'disable': !title || !content}" @click="handleClick('submit')">发布信息</view>
 
 		</view>
 	</view>
@@ -58,19 +58,78 @@
 				typeid: null,
 				title: '',
 				content: '',
-				address: '北京市海点去',
-				tags: ['市海点去','北京市海点去'],
-				imgs:['/static/imgs/icon_2@2x.png','/static/imgs/icon_2@2x.png']
+				address: '',
+				tags: [],
+				imgs:[]
 			};
 		},
 		methods: {
+			uploadImg() {
+				uni.chooseImage({
+					count: 9, //默认9
+					sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album'], //从相册选择
+					success: (chooseImageRes) => {
+						this.imgs.push(chooseImageRes.tempFilePaths)
+					}
+				});
+				return;
+				this.imgs.forEach(ele => {
+						ele.forEach(item => {
+								uni.uploadFile({
+										url: '', //仅为示例，非真实的接口地址
+										filePath: item,
+										name: 'file',
+										formData: {
+												'user': 'test'  // 上传附带参数
+										},
+										success: (uploadFileRes) => {
+												// 根据接口具体返回格式   赋值具体对应url
+												console.log(uploadFileRes.data);
+										}
+								});
+						})
+				})
+
+			},
+			getLocation() {
+				let that = this;
+				uni.getLocation({
+				    type: 'wgs84',
+				　　 geocode:true,
+				    success: function (res) {
+				        console.log(res.address);
+								that.address = res.address;
+				    }
+				});
+			},
+			showToast(v) {
+				uni.showToast({
+					title: v,
+					icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+					duration: 1600    //持续时间为 2秒
+				}) 
+			},
+			validateInfo() {
+				if (!this.title) {
+					this.showToast('请输入标题');
+					return false;
+				}
+				if (!this.content) {
+					this.showToast('请输入内容信息');
+					return false;
+				}
+				return true;
+			},
+			submitInfo() {
+				if(this.validateInfo()) {
+					console.log('oooooooooo');
+				}
+			},
 			handleClick(v, j) {
 				switch(v) {
 					case 'pos':
-						console.log('log-----');
-						break;
-					case 'submit':
-						console.log('submit');
+						this.getLocation();
 						break;
 					case 'tag':
 						console.log(j);
@@ -83,9 +142,11 @@
 					case 'delimg':
 						this.imgs.splice(j, 1)
 						break;
-						
+					case 'upload':
+						this.uploadImg();
+						break;
 					case 'submit':
-						console.log('submit');
+						this.submitInfo();
 						break;
 					default:
 				}
