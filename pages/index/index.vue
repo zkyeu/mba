@@ -11,7 +11,7 @@
 
 <script>
 	import Config from '@/utils/config.js';
-	import notice from '@/components/notice/index.vue';
+	import notice from '@/pages/notice/index.vue';
 	import types from '@/pages/article/types.vue';
 	
 	export default {

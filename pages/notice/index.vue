@@ -2,7 +2,7 @@
 	<view class="notice">
 		<view class="header">
 			<span class="notice-title"><i class="iconfont icon-notice"> 班级通知</i></span>
-			<span class="iconfont icon-arrowRight greey"></span>
+			<span class="iconfont icon-arrowRight-o1 greey"></span>
 		</view>
 		<view class="list">
 			<text v-for="i in noticeData" class="line-list" @click="navigateTo(i.id)">• {{ i.title }}</text>

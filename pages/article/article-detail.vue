@@ -20,9 +20,9 @@
 		<!-- <view class="article-text" v-html="articleData.body"></view> -->
 		<rich-text class="article-content" :nodes="handleContent(articleData.body)"></rich-text> 
 		<view class="props">
-			<span><i class="iconfont icon-position-o" v-if="articleData.address">{{articleData.address}}</i></span>
-			<span @click="hanleBtn('comment')"><i class="iconfont icon-pinglun-tongyong">{{articleData.comment}}</i></span>
-			<span @click="hanleBtn('like')"><i class="iconfont icon-praise-o" v-if="articleData.like">{{articleData.like}}</i></span>
+			<span><i class="iconfont icon-notice" v-if="articleData.address">{{articleData.address}}</i></span>
+			<span @click="hanleBtn('comment')"><i class="iconfont icon-notice">{{articleData.comment}}</i></span>
+			<span @click="hanleBtn('like')"><i class="iconfont icon-notice" v-if="articleData.like">{{articleData.like}}</i></span>
 		</view>
 		<Comment />
 	</view>

@@ -15,7 +15,7 @@
 					</view>
 					<view class="login" v-else>{{userinfo.nickName}} (点击完善)</view>
 				</view>
-				<image class="white" src="/static/imgs/fanhui.png"></image>
+				<span class="iconfont icon-arrowRight-o1 white"></span>
 			</view>
 				
 			<view class="headbox" @click="login" v-else>
@@ -23,7 +23,7 @@
 					<image src="/static/imgs/head.png"></image>
 					<view class="login">点击登录</view>
 				</view>
-				<image class="white" src="/static/imgs/fanhui.png"></image>
+				<span class="iconfont icon-arrowRight-o1 white"></span>
 			</view>
 				
 			<view class="myserv" @click="no">
@@ -49,39 +49,39 @@
 		  <text class="myservtit">我的服务</text>
 		  <view class="listitem">
 		    <view @click="no">
-		      <image src="/static/imgs/mine/icon_4@2x.png" style="height:25rpx"></image>
+					<span class="iconfont icon-shezhi1"></span>
 		      <text>花名设置</text>
 		    </view>
-		    <image src="/static/imgs/fanhui.png"></image>
+		    <span class="iconfont icon-arrowRight-o1 small"></span>
 		  </view>
 		  <view class="listitem">
 		    <view @click="no">
-		      <image src="/static/imgs/mine/icon_5@2x.png"></image>
+					<span class="iconfont icon-liuyanban-05"></span>
 		      <text>柬言献策</text>
 		    </view>
-		    <image src="/static/imgs/fanhui.png"></image>
+		    <span class="iconfont icon-arrowRight-o1 small"></span>
 		  </view>
 		  <view class="listitem">
 		    <view @click="no">
-		      <image src="/static/imgs/mine/icon_6@2x.png"></image>
+					<span class="iconfont icon-guanyuwomen"></span>
 		      <text>关于我们</text>
 		    </view>
-		    <image src="/static/imgs/fanhui.png"></image>
+		    <span class="iconfont icon-arrowRight-o1 small"></span>
 		  </view>
 		  <view class="listitem">
 		    <button open-type="share"></button>
 		    <view>
-		      <image src="/static/imgs/mine/icon_7@2x.png"></image>
+					<span class="iconfont icon-fenxiang1"></span>
 		      <text>宣传分享</text>
 		    </view>
-		    <image src="/static/imgs/fanhui.png"></image>
+		    <span class="iconfont icon-arrowRight-o1 small"></span>
 		  </view>
 		  <view class="listitem">
 		    <view @click="no">
-		      <image src="/static/imgs/mine/icon_8@2x.png" style="width:29rpx;height:27rpx"></image>
+					<span class="iconfont icon-ico"></span>
 		      <text>我的邀请码</text>
 		    </view>
-		    <image src="/static/imgs/fanhui.png"></image>
+				<span class="iconfont icon-arrowRight-o1 small"></span>
 		  </view>
 		</view>
 	</view>
@@ -152,6 +152,15 @@
 			height: 100%;
 			position: absolute;
 		}
+		.iconfont {
+			&.white {
+				color: #fff;
+			}
+			&.small {
+				font-size: 24rpx!important;
+			}
+		}
+		
 	}
 	
 	.headbox{

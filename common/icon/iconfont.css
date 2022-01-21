@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "iconfont";
-  src: url('@/common/icon/iconfont.ttf?t=1639095450354') format('truetype');
+  font-family: "iconfont"; /* Project id 3003296 */
+  src: url('@/common/icon/iconfont.woff2?t=1642785982725') format('woff2'),
+       url('@/common/icon/iconfont.woff?t=1642785982725') format('woff'),
+       url('@/common/icon/iconfont.ttf?t=1642785982725') format('truetype');
 }
 
 .iconfont {
@@ -11,13 +13,76 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-shezhi1:before {
+  content: "\e8b7";
+}
 
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.icon-ico:before {
+  content: "\e646";
+}
+
+.icon-guanyuwomen:before {
+  content: "\e655";
+}
+
+.icon-fenxiang1:before {
+  content: "\e8b1";
+}
+
+.icon-liuyanban-05:before {
+  content: "\e630";
+}
+
+.icon-morentouxiang:before {
+  content: "\e604";
+}
+
+.icon-hezuo:before {
+  content: "\e734";
+}
+
+.icon-fork:before {
+  content: "\e61b";
+}
+
+.icon-add-circle:before {
+  content: "\e664";
+}
+
+.icon-add:before {
+  content: "\e654";
+}
+
+.icon-roundclose:before {
+  content: "\e659";
+}
+
+.icon-camera:before {
+  content: "\e6b4";
+}
+
+.icon-round_close_fill_light:before {
+  content: "\e7ee";
+}
+
+.icon-tag:before {
+  content: "\e61d";
+}
+
+.icon-pinglun:before {
+  content: "\e6b3";
+}
+
+.icon-pinglun-tongyong:before {
+  content: "\e61a";
+}
+
+.icon-icon_leftbar_point:before {
+  content: "\e610";
+}
+
+.icon-point-01:before {
+  content: "\e613";
 }
 
 .icon-like:before {
@@ -34,10 +99,6 @@
 
 .icon-praise-o:before {
   content: "\e887";
-}
-
-.icon-position-o:before {
-  content: "\e889";
 }
 
 .icon-edit-o:before {
@@ -58,10 +119,6 @@
 
 .icon-avatar-o:before {
   content: "\e9b1";
-}
-
-.icon-alignTop-o:before {
-  content: "\ea20";
 }
 
 .icon-fenxiang:before {
@@ -88,22 +145,3 @@
   content: "\e648";
 }
 
-.icon-flag-points-:before {
-  content: "\e61b";
-}
-
-.icon-pinglun-tongyong:before {
-  content: "\e61a";
-}
-
-.icon-icon_leftbar_point:before {
-  content: "\e610";
-}
-
-.icon-point-01:before {
-  content: "\e613";
-}
-
-.icon-a-icon_bibianji:before {
-  content: "\e649";
-}

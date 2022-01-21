@@ -1,6 +1,6 @@
 <template>
 		<view class="content">
-			<view  v-for="(i, j) in typeData" :key="j" @click="navigateTo(i.id)">
+			<view class="item" v-for="(i, j) in typeData" :key="j" @click="navigateTo(i.id)">
 				<view class="article-person">
 					<view class="person">
 						<image src="../../static/imgs/logo.png"></image>
@@ -22,8 +22,8 @@
 						<image src="../../static/imgs/logo.png" v-for="i in 6"></image>
 				</view>
 				<view class="props">
-					<span><i class="iconfont icon-position-o" v-if="i.address">{{i.address}}</i></span>
-					<span><i class="iconfont icon-pinglun-tongyong" >{{i.comment}}</i></span>
+					<span><i class="iconfont icon-icon_position" v-if="i.address">{{i.address}}</i></span>
+					<span><i class="iconfont icon-pinglun">{{i.comment}}</i></span>
 					<span><i class="iconfont icon-praise-o" v-if="i.like">{{i.like}}</i></span>
 				</view>
 			</view>
@@ -96,10 +96,14 @@
 
 <style lang="scss" scoped>
 .content {
-		margin: 10px 0;
+		margin: 20rpx 0;
 		background-color: #fff;
-		border-radius: 6px;
-		padding: 10px;
+		border-radius: 12rpx;
+		padding: 32rpx;
+		
+		.item {
+			margin-bottom: 40rpx;
+		}
 	}
 	.article-person {
 		display: flex;
@@ -107,35 +111,35 @@
 		
 		.person {
 			display: flex;
-			margin-bottom: 10px;
+			margin-bottom: 16rpx;
 			image {
-				margin-right: 8px;
-				border-radius: 20px;
+				margin-right: 16rpx;
+				border-radius: 40rpx;
 				overflow: hidden;
 				background-color: #ddd;
-				width:34px;
-				height: 34px;
+				width: 68rpx;
+				height: 68rpx;
 			}
 			.name-block {
 				display: flex;
 				flex-direction: column;
 				.name {
 					display: flex;
-					font-size: 13px;
+					font-size: 26rpx;
 					
 					.tags {
 						background-color: #333;
 						color: #fff;
-						border-radius: 6px;
-						padding: 0 8px;
-						height: 18px;
-						line-height: 18px;
-						margin-left: 8px;
-						font-size: 10px;
+						border-radius: 12rpx;
+						padding: 0 16rpx;
+						height: 36rpx;
+						line-height: 36rpx;
+						margin-left: 16rpx;
+						font-size: 20rpx;
 					}
 				}
 				.date {
-					font-size: 12px;
+					font-size: 24rpx;
 					color: #aaa;
 				}
 			}
@@ -147,12 +151,12 @@
 	}
 	
 	.article-title {
-		font-size:14px;
-		margin-bottom: 6px;
+		font-size: 28rpx;
+		margin-bottom: 12rpx;
 	}
 	
 	.article-content{
-		font-size: 13px;
+		font-size: 26rpx;
 		color: #333;
 	}
 	
@@ -162,7 +166,7 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 		align-items: flex-start;
-		margin-top:16px;
+		margin-top: 32rpx;
 		image{
 			width: 25vw;
 			height:80px;
@@ -175,7 +179,7 @@
 	}
 	.props {
 		display: flex;
-		padding-top: 16px;
+		// padding-top: 16rpx;
 		justify-content: space-between;
 		color: #777;
 		
@@ -184,7 +188,7 @@
 			align-items: center;
 		}
 		.iconfont {
-			font-size: 12px;
+			font-size: 24rpx;
 		}
 	}
 </style>

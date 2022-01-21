@@ -27,9 +27,9 @@
 				<image :src="i" v-for="i in articleInfo.imgs"></image>
 		</view> -->
 		<view class="props">
-			<span><i class="iconfont icon-position-o" v-if="articleData.address">{{articleData.address}}</i></span>
-			<span @click="hanleBtn('comment')"><i class="iconfont icon-pinglun-tongyong" v-if="articleData.comment">{{articleData.comment}}</i></span>
-			<span @click="hanleBtn('like')"><i class="iconfont icon-praise-o" v-if="articleData.like">{{articleData.like}}</i></span>
+			<span><i class="iconfont icon-notice" v-if="articleData.address">{{articleData.address}}</i></span>
+			<span @click="hanleBtn('comment')"><i class="iconfont icon-notice" v-if="articleData.comment">{{articleData.comment}}</i></span>
+			<span @click="hanleBtn('like')"><i class="iconfont icon-notice" v-if="articleData.like">{{articleData.like}}</i></span>
 		</view>
 	</view>
 </template>
