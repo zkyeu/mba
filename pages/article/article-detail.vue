@@ -19,13 +19,10 @@
 		<view class="article-title">{{articleData.title}}</view>
 		<!-- <view class="article-text" v-html="articleData.body"></view> -->
 		<rich-text class="article-content" :nodes="handleContent(articleData.body)"></rich-text> 
-<!-- 		<view class="img-list">
-				<image :src="i" v-for="i in articleInfo.imgs"></image>
-		</view> -->
 		<view class="props">
-			<span><i class="iconfont icon-position-o" v-if="articleData.address">{{articleData.address}}</i></span>
-			<span @click="hanleBtn('comment')"><i class="iconfont icon-pinglun-tongyong">{{articleData.comment}}</i></span>
-			<span @click="hanleBtn('like')"><i class="iconfont icon-praise-o" v-if="articleData.like">{{articleData.like}}</i></span>
+			<span><i class="iconfont icon-notice" v-if="articleData.address">{{articleData.address}}</i></span>
+			<span @click="hanleBtn('comment')"><i class="iconfont icon-notice">{{articleData.comment}}</i></span>
+			<span @click="hanleBtn('like')"><i class="iconfont icon-notice" v-if="articleData.like">{{articleData.like}}</i></span>
 		</view>
 		<Comment />
 	</view>
@@ -92,7 +89,7 @@
 		onShareAppMessage: function () {
 			return {
 				title: this.articleData.title,
-				path:"/pages/article-detail/article-detail?id="+this.aid,
+				path: "/pages/article/article-detail?id=" + this.aid,
 				// imageUrl:this.data.info.img?this.data.info.img[0]:''
 			}
 		},

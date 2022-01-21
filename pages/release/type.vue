@@ -34,7 +34,7 @@
 			</view>
 			
 			 <view class="del" @click="handleClick('index')">
-			   <image src="/static/imgs/shanchu@2x.png"></image>
+				 <i class="iconfont icon-fork"></i>
 			 </view>
 		</view>
 	</view>

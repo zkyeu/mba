@@ -19,20 +19,21 @@
 				"navigationBarTitleText": "选择类型"
 			}
 		},
+		
+		{
+			"path" : "pages/article/article-detail",
+			"style":           
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
 		{
 			"path" : "pages/mine/mine",
 			"style" : {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false,
 				"navigationStyle":"custom"
-			}
-		},
-		{
-			"path" : "pages/article-detail/article-detail",
-			"style" :                                                                                    
-			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
 			}
 		},
 		{

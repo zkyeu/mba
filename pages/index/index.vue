@@ -1,21 +1,18 @@
 <template>
 	<view class="content">
 		<notice></notice>
-		<navigate></navigate>
+		<types></types>
 		<image class="logo" src="/static/imgs/logo.png"></image>
 		<view class="copy-right">
 			<text class="title">{{title}}</text>
 		</view>
-		 <!-- <Tabbar :current="0"></Tabbar> -->
 	</view>
 </template>
 
 <script>
 	import Config from '@/utils/config.js';
-	// import Tabbar from '@/components/tabBar/tabBar.vue'
-	import notice from '@/components/notice/index.vue';
-	import navigate from '@/components/navigate/navigate.vue';
-	import articles from '@/components/article/article.vue';
+	import notice from '@/pages/notice/index.vue';
+	import types from '@/pages/article/types.vue';
 	
 	export default {
 		data() {
@@ -25,8 +22,7 @@
 		},
 		components: {
 			notice,
-			navigate,
-			articles
+			types
 		},
 		onLoad() {
 
