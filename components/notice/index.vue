@@ -11,13 +11,13 @@
 </template>
 
 <script>
-
 	export default {
 		data() {
 			return {
 				noticeData: []
 			};
 		},
+		components:{},
 		methods: {
 			fetchList() {
 				uni.request({

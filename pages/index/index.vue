@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<notice></notice>
-		<navigate></navigate>
+		<types></types>
 		<image class="logo" src="/static/imgs/logo.png"></image>
 		<view class="copy-right">
 			<text class="title">{{title}}</text>
@@ -12,7 +12,7 @@
 <script>
 	import Config from '@/utils/config.js';
 	import notice from '@/components/notice/index.vue';
-	import navigate from '@/components/navigate/navigate.vue';
+	import types from '@/pages/article/types.vue';
 	
 	export default {
 		data() {
@@ -22,7 +22,7 @@
 		},
 		components: {
 			notice,
-			navigate
+			types
 		},
 		onLoad() {
 
