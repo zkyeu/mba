@@ -1,13 +1,6 @@
 {
 	"pages": [
-		{
-			"path" : "pages/mine/mine",
-			"style" : {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"navigationStyle":"custom"
-			}
-		},
+		
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -33,6 +26,14 @@
 			{
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path" : "pages/mine/mine",
+			"style" : {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom"
 			}
 		},
 		{
