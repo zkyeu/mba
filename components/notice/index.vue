@@ -38,7 +38,7 @@
 			},
 			navigateTo(id) {
 				uni.navigateTo({
-				    url: `/pages/article-detail/article-detail?id=${id}`
+				    url: `/pages/article/article-detail?id=${id}`
 				});
 			}
 		},

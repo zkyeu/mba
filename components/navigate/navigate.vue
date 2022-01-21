@@ -13,9 +13,7 @@
 				</block>
 			</scroll-view>
 		</view>
-	<!-- 	<view class="122">
-			{{JSON.stringify(typeData)}} 
-		</view> -->
+
 		<!-- 内容区 -->
 		<view class="content" v-for="i in typeData.data" @click="navigateTo(i.id)">
 			<view class="article-person">
@@ -49,7 +47,7 @@
 </template>
  
 <script>
-	import articles from '@/components/article/article.vue';
+	// import articles from '@/components/article/article.vue';
 	
 	export default {
 		data () {
@@ -82,7 +80,7 @@
 			}
 		},
 		comments: {
-			articles
+			// articles
 		},
 		methods:{
 			//切换选项卡
@@ -130,9 +128,11 @@
 				})
 				return tag;
 			},
+			
+			// 文章详情
 			navigateTo(id) {
 				uni.navigateTo({
-				    url: `/pages/article-detail/article-detail?id=${id}`
+				    url: `/pages/article/article-detail?id=${id}`
 				});
 			},
 

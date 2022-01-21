@@ -29,7 +29,7 @@ export default {
                     text: '分类',
                     icon: '/static/images/classify.png',
                     icon_a: '/static/images/classify_i.png',
-                    path: "pages/article-detail/article-detail",
+                    path: "pages/article/article-detail",
                 }
                 ,{
                     text: '订单',

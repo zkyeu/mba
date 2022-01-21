@@ -28,8 +28,8 @@
 			}
 		},
 		{
-			"path" : "pages/article-detail/article-detail",
-			"style" :                                                                                    
+			"path" : "pages/article/article-detail",
+			"style":           
 			{
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
