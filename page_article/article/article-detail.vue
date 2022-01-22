@@ -29,7 +29,6 @@
 </template>
 
 <script>
-	import http from '../../utils/http.js';
 	import Moment from 'moment';
 	import Comment from '@/components/comment/comment.vue';
 	export default {
@@ -70,34 +69,21 @@
 				return v.replace(regex,'<img style="max-width: 100%;"');
 			},
 
-			async fetchArticle(){
+			fetchArticle(){
 				if (!this.aid) return;
-				const res = await http.get('/apiv1/get/article', {
-				  id: parseInt(this.aid)
+				uni.request({
+				    url: 'https://www.sotm.cn/apiv1/get/article',
+				    data: {
+							id: parseInt(this.aid)
+				    },
+						method: 'GET',
+				    header: {
+				        'custom-header': 'hello' //自定义请求头信息
+				    },
+				    success: (res) => {
+								this.articleData = res.data.data;
+				    }
 				});
-				if(res.errNo === 0) {
-					this.articleData = res.data;
-				} else {
-				  uni.showToast({
-				  	title: '请求失败',
-				  	icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
-				  	duration: 1600    //持续时间为 2秒
-				  }) 
-				  return false
-				}
-				// uni.request({
-				//     url: 'https://www.sotm.cn/apiv1/get/article',
-				//     data: {
-				// 			id: parseInt(this.aid)
-				//     },
-				// 		method: 'GET',
-				//     header: {
-				//         'custom-header': 'hello' //自定义请求头信息
-				//     },
-				//     success: (res) => {
-				// 			this.articleData = res.data.data;
-				//     }
-				// });
 			}
 		},
 		onShareAppMessage: function () {

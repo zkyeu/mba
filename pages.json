@@ -19,7 +19,6 @@
 				"navigationBarTitleText": "选择类型"
 			}
 		},
-		
 		{
 			"path" : "pages/article/article-detail",
 			"style":           
@@ -35,15 +34,15 @@
 				"enablePullDownRefresh": false,
 				"navigationStyle":"custom"
 			}
-		},
-		{
-			"path" : "pages/login/login",
-			"style" :                                                                                    
-			{
-					"navigationBarTitleText": "登录",
-					"enablePullDownRefresh": false
-			}
 		}
+		// {
+		// 	"path" : "pages/login/login",
+		// 	"style" :                                                                                    
+		// 	{
+		// 			"navigationBarTitleText": "登录",
+		// 			"enablePullDownRefresh": false
+		// 	}
+		// }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -51,6 +50,40 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
+	"subPackages": [
+	   // {
+	   //   "root": "page_article",
+	   //   "pages": [
+				//  {
+				// 	 path: "article/types",
+				// 	 "style": {
+				// 	 	"navigationBarTitleText": ""
+				// 	 }
+				//  },
+				//  {
+				// 	 path: "article/article-list",
+				// 	 "style": {
+				// 		"navigationBarTitleText": ""
+				// 	 }
+				//  },
+				//  {
+				// 	 path:  "article/article-detail",
+				// 	 "style": {
+				// 			"navigationBarTitleText": ""
+				// 		 }
+				//  }
+	       
+	       
+	      
+	   //   ]
+	   // },
+	   // {
+	   //   "root": "page/API/",
+	   //   "pages": [
+	   //     "pages/login/login"
+	   //   ]
+	   // }
+	 ],
 	"tabBar": {
 		"color": "#7A7E83",
 		"selectedColor": "#2483ff",
@@ -76,5 +109,6 @@
 			}
 		]
 	}
+
 	
 }

@@ -3,7 +3,7 @@
 			<view class="item" v-for="(i, j) in typeData" :key="j" @click="navigateTo(i.id)">
 				<view class="article-person">
 					<view class="person">
-						<image src="../../static/imgs/logo.png"></image>
+						<!-- <image src="../../static/imgs/logo.png"></image> -->
 						<view class="name-block">
 							<view class="name">
 								<view>MBA21081班</view>
@@ -18,9 +18,9 @@
 				</view>
 				
 				<view class="article-title">{{i.title}}</view>
-				<view class="img-list" v-if="false">
+		<!-- 		<view class="img-list" v-if="false">
 						<image src="../../static/imgs/logo.png" v-for="i in 6"></image>
-				</view>
+				</view> -->
 				<view class="props">
 					<span><i class="iconfont icon-icon_position" v-if="i.address">{{i.address}}</i></span>
 					<span><i class="iconfont icon-pinglun">{{i.comment}}</i></span>
@@ -46,7 +46,7 @@
 					url: 'https://www.sotm.cn/apiv1/get/articlelist',
 					data: {
 						pn: 1,
-						rn: 100
+						rn: 10
 					},
 					method: 'POST',
 					header: {

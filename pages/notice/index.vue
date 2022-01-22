@@ -11,6 +11,7 @@
 </template>
 
 <script>
+	import http from '../../utils/http.js';
 	export default {
 		data() {
 			return {
@@ -19,23 +20,40 @@
 		},
 		components:{},
 		methods: {
-			fetchList() {
-				uni.request({
-				    url: 'https://www.sotm.cn/apiv1/get/articlelist', //仅为示例，并非真实接口地址。
-				    data: {
-							type: 35,
-							pn: 1,
-							rn: 3
-				    },
-						method: 'POST',
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (res) => {
-								this.noticeData = res.data.data;
-				    }
-				});
+			async fetchList() {
+			  const res = await http.post('/apiv1/get/articlelist', {
+			    type: 35,
+					pn: 1,
+					rn: 3
+			  });
+				if(res.errNo === 0) {
+					this.noticeData = res.data;
+				} else {
+			    uni.showToast({
+			    	title: '请求失败',
+			    	icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+			    	duration: 1600    //持续时间为 2秒
+			    }) 
+			    return false
+			  }
 			},
+			// fetchList() {
+			// 	uni.request({
+			// 	    url: 'https://www.sotm.cn/apiv1/get/articlelist', //仅为示例，并非真实接口地址。
+			// 	    data: {
+			// 				type: 35,
+			// 				pn: 1,
+			// 				rn: 3
+			// 	    },
+			// 			method: 'POST',
+			// 	    header: {
+			// 	        'custom-header': 'hello' //自定义请求头信息
+			// 	    },
+			// 	    success: (res) => {
+			// 					this.noticeData = res.data.data;
+			// 	    }
+			// 	});
+			// },
 			navigateTo(id) {
 				uni.navigateTo({
 				    url: `/pages/article/article-detail?id=${id}`
